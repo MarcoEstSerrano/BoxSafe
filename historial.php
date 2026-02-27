@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require('conexion/conexion.php');
 check_auth();
 
 $sql = "SELECT p.*, c.numero_casillero, a1.usuario as admin_in, a2.usuario as admin_out 

@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require('conexion/conexion.php');
 check_auth();
 
 $res = mysqli_query($conn, "SELECT * FROM casilleros ORDER BY numero_casillero ASC");

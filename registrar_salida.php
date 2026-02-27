@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require('conexion/conexion.php');
 check_auth();
 
 if (isset($_GET['id'])) {

@@ -1,17 +1,20 @@
 <?php
-$host = 'localhost';
-$db   = 'gestion_casilleros';   
-$user = 'root';
-$pass = '';         // no voy a usar contraseña porque el XAMPP no tiene.
-$charset = 'utf8mb4';
+session_start();
+$host = "localhost";
+$user = "root";
+$pass = "Admin$1234";
+$db   = "gestion_casilleros";
 
-$dsn = "mysql:host=$host;port=3306;dbname=$db;charset=$charset";
+$conn = mysqli_connect($host, $user, $pass, $db);
 
-try {
-    $pdo = new PDO($dsn, $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "Conexión exitosa";  // Solo para pruebas
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
+if (!$conn) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
+
+function check_auth() {
+    if (!isset($_SESSION['admin_id'])) {
+        header("Location: login.php");
+        exit();
+    }
 }
 ?>

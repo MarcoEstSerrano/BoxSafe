@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require('conexion/conexion.php');
 check_auth();
 
 $res_total = mysqli_query($conn, "SELECT COUNT(*) as total FROM casilleros");

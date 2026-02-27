@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require('conexion/conexion.php');
 // check_auth(); // Mantén esto comentado hasta que logres crear tu primer usuario y loguearte
 
 $mensaje = "";
