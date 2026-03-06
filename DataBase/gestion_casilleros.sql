@@ -15,6 +15,8 @@ CREATE TABLE casilleros (
     creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+select * from paquetes;
+
 CREATE TABLE paquetes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre_cliente VARCHAR(100) NOT NULL,
