@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #eee;">
 
         <div style="text-align: center;">
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">¿No tienes cuenta?</p>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">¿Necesitas registrarte?</p>
             <a href="registrar_usuario.php" class="btn btn-green" style="text-decoration: none; display: block;">Registrar Nuevo Usuario</a>
         </div>
     </div>

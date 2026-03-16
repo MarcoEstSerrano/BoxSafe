@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_query($conn, $sql_p) && mysqli_query($conn, $sql_c)) {
         mysqli_commit($conn);
         header("Location: dashboard.php");
+        exit();
     } else {
         mysqli_rollback($conn);
     }
@@ -29,10 +30,19 @@ $libres = mysqli_query($conn, "SELECT id, numero_casillero FROM casilleros WHERE
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registrar Ingreso</title>
+    <title>Registrar Ingreso - BoxSafe</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ajuste extra para centrar el formulario específicamente en esta página */
+        .main-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh; /* Ajusta la altura para que no pegue al nav */
+        }
+    </style>
 </head>
-<body>
+<body class="dashboard-page">
     <header><h1>Gestión de Casilleros</h1></header>
     <nav>
         <a href="dashboard.php">Dashboard</a>
@@ -42,29 +52,32 @@ $libres = mysqli_query($conn, "SELECT id, numero_casillero FROM casilleros WHERE
         <a href="historial.php">Historial</a>
         <a href="logout.php">Cerrar Sesión</a>
     </nav>
+
     <div class="container">
-        <div class="form-container">
-            <h2>Ingreso de Paquete</h2>
-            <form method="POST">
-                <div class="form-group">
-                    <label>Nombre del Cliente</label>
-                    <input type="text" name="nombre_cliente" required>
-                </div>
-                <div class="form-group">
-                    <label>Objeto</label>
-                    <input type="text" name="objeto" required>
-                </div>
-                <div class="form-group">
-                    <label>Casillero Disponible</label>
-                    <select name="casillero_id" required>
-                        <option value="">Seleccione...</option>
-                        <?php while($c = mysqli_fetch_assoc($libres)): ?>
-                            <option value="<?php echo $c['id']; ?>">Casillero #<?php echo $c['numero_casillero']; ?></option>
-                        <?php endwhile; ?>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-green" style="width:100%">Guardar Ingreso</button>
-            </form>
+        <div class="main-wrapper">
+            <div class="form-container" style="width: 100%; max-width: 450px;">
+                <h2 style="text-align: center; color: var(--cafe-oscuro); margin-bottom: 20px;"> Nuevo Ingreso</h2>
+                <form method="POST">
+                    <div class="form-group">
+                        <label>Nombre del Cliente</label>
+                        <input type="text" name="nombre_cliente" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Objeto / Producto</label>
+                        <input type="text" name="objeto" placeholder="Ej. Bolsa de compras" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Asignar Casillero</label>
+                        <select name="casillero_id" required>
+                            <option value="">Seleccione un espacio disponible...</option>
+                            <?php while($c = mysqli_fetch_assoc($libres)): ?>
+                                <option value="<?php echo $c['id']; ?>">Casillero #<?php echo $c['numero_casillero']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-green" style="width:100%; margin-top: 10px;">Confirmar y Guardar</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>

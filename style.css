@@ -1,158 +1,169 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Paleta de Colores Supermercado/Caja */
+:root {
+    --cafe-caja: #8B4513;
+    --cafe-claro: #D2B48C;
+    --cafe-oscuro: #5D4037;
+    --fondo-crema: #FDF5E6;
+    --verde-super: #27AE60;
+    --rojo-salida: #C0392B;
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: var(--fondo-crema);
 }
 
+/* --- 1. ESTILO BIENVENIDA (index.php) --- */
+.welcome-screen {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url('https://static.vecteezy.com/system/resources/previews/006/716/847/non_2x/cartoon-supermarket-facade-of-the-building-street-view-in-flat-style-front-shop-vector.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.welcome-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.btn-start {
+    background-color: var(--cafe-caja);
+    color: white;
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-start:hover {
+    background-color: var(--cafe-oscuro);
+    transform: scale(1.05);
+}
+
+/* --- 2. ESTILO LOGIN (Supermercado) --- */
+.login-page {
+    background-image: url('https://wallpapers.com/images/hd/lockers-background-oxgpjt27pf2cm0uq.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- 3. ESTILO DASHBOARD (Fondo Caja) --- */
+.dashboard-page {
+    background-image: url('https://inarquia.es/wp-content/uploads/envases-sostenibles-scaled-1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Header y Nav Cafés */
 header {
-    background-color: #2c3e50;
+    background: var(--cafe-caja);
     color: white;
     padding: 1rem;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 nav {
-    background: #34495e;
+    background: var(--cafe-oscuro);
+    padding: 0.5rem;
     display: flex;
     justify-content: center;
-    padding: 0.5rem;
-    flex-wrap: wrap;
+    gap: 15px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
+    font-weight: bold;
+    padding: 8px 15px;
     border-radius: 4px;
 }
 
-nav a:hover {
-    background: #1abc9c;
-}
+nav a:hover { background: var(--cafe-caja); }
 
+/* Contenedores */
 .container {
     max-width: 1000px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    background: rgba(255, 255, 255, 0.92); 
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* Formularios y Botones */
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 350px;
+}
+
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 5px; color: var(--cafe-oscuro); font-weight: bold; }
+.form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-blue { background: var(--cafe-caja); color: white; width: 100%; }
+.btn-green { background: var(--verde-super); color: white; }
+.btn-red { background: var(--rojo-salida); color: white; }
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th { background: var(--cafe-caja); color: white; padding: 12px; }
+table td { padding: 12px; border-bottom: 1px solid #eee; text-align: center; }
+tr:hover { background: #f9f9f9; }
+
+/* Grid de Tarjetas */
 .card-grid {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
     margin-bottom: 2rem;
 }
 
 .card {
-    background: white;
-    flex: 1;
-    min-width: 200px;
+    background: var(--cafe-claro);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
-}
-
-.card h3 {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    text-transform: uppercase;
-}
-
-.card p {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.form-container {
-    background: white;
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-input, select {
-    width: 100%;
-    padding: 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    margin-top: 1rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-th, td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-th {
-    background-color: #ecf0f1;
-    color: #2c3e50;
-}
-
-.btn {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 0.9rem;
-    color: white;
-    transition: opacity 0.3s;
-}
-
-.btn:hover {
-    opacity: 0.8;
-}
-
-.btn-green { background-color: #27ae60; }
-.btn-red { background-color: #e74c3c; }
-.btn-blue { background-color: #3498db; width: 100%; margin-top: 1rem;}
-
-.badge {
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    color: white;
-}
-
-.badge-libre { background: #27ae60; }
-.badge-ocupado { background: #e67e22; }
-
-.login-page {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 2px solid var(--cafe-caja);
 }

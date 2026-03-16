@@ -21,8 +21,7 @@ $paquetes_activos = mysqli_fetch_assoc($res_paquetes)['total'];
     <title>Dashboard - Sistema Casilleros</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header><h1>Gestión de Casilleros</h1></header>
+<body class="dashboard-page"> <header><h1>Gestión de Casilleros</h1></header>
     <nav>
         <a href="dashboard.php">Dashboard</a>
         <a href="registrar_ingreso.php">Ingreso</a>
