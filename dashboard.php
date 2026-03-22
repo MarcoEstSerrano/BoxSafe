@@ -18,36 +18,36 @@ $paquetes_activos = mysqli_fetch_assoc($res_paquetes)['total'];
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - Sistema Casilleros</title>
+    <title>Dashboard - Locker System</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dashboard-page"> <header><h1>Gestión de Casilleros</h1></header>
+<body class="dashboard-page"> <header><h1>Locker Management</h1></header>
     <nav>
         <a href="dashboard.php">Dashboard</a>
-        <a href="registrar_ingreso.php">Ingreso</a>
-        <a href="registrar_salida.php">Salida</a>
-        <a href="casilleros.php">Casilleros</a>
+        <a href="registrar_ingreso.php">Access</a>
+        <a href="registrar_salida.php">Exit</a>
+        <a href="casilleros.php">Locker</a>
         <a href="historial.php">Historial</a>
-        <a href="logout.php">Cerrar Sesión</a>
+        <a href="logout.php">Logout</a>
     </nav>
     <div class="container">
-        <h2>Panel Principal</h2>
+        <h2>Main Panel</h2>
         <div class="card-grid">
-            <div class="card"><h3>Total Casilleros</h3><p><?php echo $total; ?></p></div>
-            <div class="card"><h3>Libres</h3><p><?php echo $libres; ?></p></div>
-            <div class="card"><h3>Ocupados</h3><p><?php echo $ocupados; ?></p></div>
-            <div class="card"><h3>Paquetes Activos</h3><p><?php echo $paquetes_activos; ?></p></div>
+            <div class="card"><h3>Total Lockers</h3><p><?php echo $total; ?></p></div>
+            <div class="card"><h3>free</h3><p><?php echo $libres; ?></p></div>
+            <div class="card"><h3>Busy</h3><p><?php echo $ocupados; ?></p></div>
+            <div class="card"><h3>Active Packages</h3><p><?php echo $paquetes_activos; ?></p></div>
         </div>
         
-        <h3>Paquetes en curso</h3>
+        <h3>Packages in progress</h3>
         <table>
             <thead>
                 <tr>
-                    <th>Cliente</th>
-                    <th>Objeto</th>
-                    <th>Casillero</th>
-                    <th>Ingreso</th>
-                    <th>Acción</th>
+                    <th>Client</th>
+                    <th>Object</th>
+                    <th>Locker</th>
+                    <th>Access</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

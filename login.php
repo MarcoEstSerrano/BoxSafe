@@ -28,12 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Gestión de Casilleros</title>
+    <title>Login - Locker Management</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="login-page">
     <div class="form-container">
-        <h2 style="text-align:center; margin-bottom:1.5rem;">Iniciar Sesión</h2>
+        <h2 style="text-align:center; margin-bottom:1.5rem;">Login</h2>
         
         <?php if($error): ?>
             <p style="color:red; text-align:center;"><?php echo $error; ?></p>
@@ -41,21 +41,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <form method="POST">
             <div class="form-group">
-                <label>Usuario</label>
+                <label>User</label>
                 <input type="text" name="usuario" required>
             </div>
             <div class="form-group">
-                <label>Contraseña</label>
+                <label>Password</label>
                 <input type="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-blue">Entrar</button>
+            <button type="submit" class="btn btn-blue">Enter</button>
         </form>
 
         <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #eee;">
 
         <div style="text-align: center;">
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">¿Necesitas registrarte?</p>
-            <a href="registrar_usuario.php" class="btn btn-green" style="text-decoration: none; display: block;">Registrar Nuevo Usuario</a>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">Do you need to register?</p>
+            <a href="registrar_usuario.php" class="btn btn-green" style="text-decoration: none; display: block;">Register New User</a>
         </div>
     </div>
 </body>

@@ -8,7 +8,7 @@ $db   = "gestion_casilleros";
 $conn = mysqli_connect($host, $user, $pass, $db);
 
 if (!$conn) {
-    die("Error de conexión: " . mysqli_connect_error());
+    die("Connection error: " . mysqli_connect_error());
 }
 
 function check_auth() {

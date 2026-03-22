@@ -30,7 +30,7 @@ $libres = mysqli_query($conn, "SELECT id, numero_casillero FROM casilleros WHERE
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registrar Ingreso - BoxSafe</title>
+    <title>Register Login - BoxSafe</title>
     <link rel="stylesheet" href="style.css">
     <style>
         /* Ajuste extra para centrar el formulario específicamente en esta página */
@@ -43,39 +43,39 @@ $libres = mysqli_query($conn, "SELECT id, numero_casillero FROM casilleros WHERE
     </style>
 </head>
 <body class="dashboard-page">
-    <header><h1>Gestión de Casilleros</h1></header>
+    <header><h1>Locker Management</h1></header>
     <nav>
         <a href="dashboard.php">Dashboard</a>
-        <a href="registrar_ingreso.php">Ingreso</a>
-        <a href="registrar_salida.php">Salida</a>
-        <a href="casilleros.php">Casilleros</a>
+        <a href="registrar_ingreso.php">access</a>
+        <a href="registrar_salida.php">exit</a>
+        <a href="casilleros.php">Lockers</a>
         <a href="historial.php">Historial</a>
-        <a href="logout.php">Cerrar Sesión</a>
+        <a href="logout.php">Logout</a>
     </nav>
 
     <div class="container">
         <div class="main-wrapper">
             <div class="form-container" style="width: 100%; max-width: 450px;">
-                <h2 style="text-align: center; color: var(--cafe-oscuro); margin-bottom: 20px;"> Nuevo Ingreso</h2>
+                <h2 style="text-align: center; color: var(--cafe-oscuro); margin-bottom: 20px;"> New Entry</h2>
                 <form method="POST">
                     <div class="form-group">
-                        <label>Nombre del Cliente</label>
-                        <input type="text" name="nombre_cliente" placeholder="Ej. Juan Pérez" required>
+                        <label>Client Name</label>
+                        <input type="text" name="nombre_cliente" placeholder="Ex. Juan Pérez" required>
                     </div>
                     <div class="form-group">
-                        <label>Objeto / Producto</label>
-                        <input type="text" name="objeto" placeholder="Ej. Bolsa de compras" required>
+                        <label>Object/Product</label>
+                        <input type="text" name="objeto" placeholder="Ex. shopping bag" required>
                     </div>
                     <div class="form-group">
-                        <label>Asignar Casillero</label>
+                        <label>Assign Locker</label>
                         <select name="casillero_id" required>
-                            <option value="">Seleccione un espacio disponible...</option>
+                            <option value="">Select an available space...</option>
                             <?php while($c = mysqli_fetch_assoc($libres)): ?>
-                                <option value="<?php echo $c['id']; ?>">Casillero #<?php echo $c['numero_casillero']; ?></option>
+                                <option value="<?php echo $c['id']; ?>">Locker #<?php echo $c['numero_casillero']; ?></option>
                             <?php endwhile; ?>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-green" style="width:100%; margin-top: 10px;">Confirmar y Guardar</button>
+                    <button type="submit" class="btn btn-green" style="width:100%; margin-top: 10px;">Confirm and Save</button>
                 </form>
             </div>
         </div>

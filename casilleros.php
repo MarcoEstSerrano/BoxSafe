@@ -8,27 +8,27 @@ $res = mysqli_query($conn, "SELECT * FROM casilleros ORDER BY numero_casillero A
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Estado de Casilleros</title>
+    <title>Lockers Status</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header><h1>Gestión de Casilleros</h1></header>
+    <header><h1>Locker Management</h1></header>
     <nav>
         <a href="dashboard.php">Dashboard</a>
-        <a href="registrar_ingreso.php">Ingreso</a>
-        <a href="registrar_salida.php">Salida</a>
-        <a href="casilleros.php">Casilleros</a>
+        <a href="registrar_ingreso.php">Access</a>
+        <a href="registrar_salida.php">Exit</a>
+        <a href="casilleros.php">Locker</a>
         <a href="historial.php">Historial</a>
-        <a href="logout.php">Cerrar Sesión</a>
+        <a href="logout.php">Logout</a>
     </nav>
     <div class="container">
-        <h2>Estado de Casilleros</h2>
+        <h2>Lockers Status</h2>
         <table>
             <thead>
                 <tr>
-                    <th># Casillero</th>
-                    <th>Estado</th>
-                    <th>Fecha Registro</th>
+                    <th># Locker</th>
+                    <th>State</th>
+                    <th>Registration Date</th>
                 </tr>
             </thead>
             <tbody>
