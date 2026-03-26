@@ -46,9 +46,9 @@ $libres = mysqli_query($conn, "SELECT id, numero_casillero FROM casilleros WHERE
     <header><h1>Locker Management</h1></header>
     <nav>
         <a href="dashboard.php">Dashboard</a>
-        <a href="registrar_ingreso.php">access</a>
-        <a href="registrar_salida.php">exit</a>
-        <a href="casilleros.php">Lockers</a>
+        <a href="registrar_ingreso.php">Access</a>
+        <a href="registrar_salida.php">Exit</a>
+        <a href="casilleros.php">Locker</a>
         <a href="historial.php">Historial</a>
         <a href="logout.php">Logout</a>
     </nav>
